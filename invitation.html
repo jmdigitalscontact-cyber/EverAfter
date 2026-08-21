@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.setAttribute("data-theme", new URLSearchParams(location.search).get("theme") || localStorage.getItem("ea-theme") || "sage");</script>
+  <title>Invitation mockup — EverAfter</title>
+  <link rel="stylesheet" href="assets/mockup.css" />
+  <link rel="stylesheet" href="assets/themes.css" />
+</head>
+<body data-page-title="Invitation — {names}">
+  <header class="hub-bar">
+    <a class="hub-brand" href="index.html">
+      <strong>EverAfter</strong>
+      <span>Invitation mockup</span>
+    </a>
+    <nav class="hub-nav">
+      <a href="index.html">Offering</a>
+      <a href="designs.html">Looks</a>
+      <a class="is-active" href="invitation.html">Invitation</a>
+      <a href="admin.html">Admin</a>
+      <a href="reception.html">Reception</a>
+      <a href="wall.html">Photo wall</a>
+    </nav>
+    <div class="theme-switch">
+      <label for="theme-select">Look</label>
+      <select id="theme-select">
+        <option value="sage">Sage Garden</option>
+        <option value="blush">Champagne Blush</option>
+        <option value="navy">Midnight Velvet</option>
+        <option value="terra">Terracotta Olive</option>
+        <option value="ink">Ivory &amp; Ink</option>
+      </select>
+    </div>
+  </header>
+
+  <header class="site-header">
+    <a class="site-logo" href="#home" data-copy="brand">The Reyes–Cruz Wedding</a>
+    <ul class="site-nav">
+      <li><a href="#events">Events</a></li>
+      <li><a href="#moments">Moments</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#attire">Attire</a></li>
+      <li><a href="#program">Program</a></li>
+      <li><a href="#entourage">Entourage</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </header>
+
+  <section class="inv-hero" id="home">
+    <div>
+      <p class="eyebrow" style="color:#e8ca7a" data-copy="dateLong">Saturday, 20 June 2027</p>
+      <h1 class="names" data-copy="namesHtml">Sofia <span class="amp">&amp;</span> Gabriel</h1>
+      <p>Together with our families, we invite you to celebrate the beginning of our forever.</p>
+      <div class="countdown" id="live-countdown" aria-label="Countdown">
+        <div><strong data-cd="days">00</strong><small>Days</small></div>
+        <div><strong data-cd="hours">00</strong><small>Hours</small></div>
+        <div><strong data-cd="mins">00</strong><small>Mins</small></div>
+        <div><strong data-cd="secs">00</strong><small>Secs</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="inv-section wrap" id="events">
+    <h2>Celebrate with us</h2>
+    <p class="inv-sub">Ceremony first, reception after. Allow 15–20 minutes between venues.</p>
+    <div class="event-grid">
+      <article class="event-card">
+        <img src="assets/photos/ceremony.jpg" alt="Ceremony" />
+        <div>
+          <h3>Wedding ceremony</h3>
+          <p><span data-copy="ceremonyTime">2:00 PM</span> · <span data-copy="ceremonyVenue">Our Lady of Peace Parish</span></p>
+          <p style="color:var(--muted);font-size:0.9rem" data-copy="ceremonyAddr">Makati, Metro Manila</p>
+          <p style="margin-top:0.6rem;font-size:0.85rem;color:var(--sage)">Get directions (maps in the live site)</p>
+        </div>
+      </article>
+      <article class="event-card">
+        <img src="assets/photos/reception.jpg" alt="Reception" />
+        <div>
+          <h3>Wedding reception</h3>
+          <p><span data-copy="receptionTime">5:00 PM</span> · <span data-copy="receptionVenue">The Garden at Alta Vista</span></p>
+          <p style="color:var(--muted);font-size:0.9rem" data-copy="receptionAddr">Tagaytay, Cavite</p>
+          <p style="margin-top:0.6rem;font-size:0.85rem;color:var(--sage)">Get directions (maps in the live site)</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="inv-section wrap" id="moments" style="padding-top:0">
+    <h2>Our moments</h2>
+    <p class="inv-sub">A glimpse of the story we will keep telling.</p>
+    <div class="moments">
+      <article class="event-card">
+        <img src="assets/photos/moment-1.jpg" alt="" />
+        <div><h3>Where it began</h3><p>Friendship first, then the quiet certainty that we had found home.</p></div>
+      </article>
+      <article class="event-card">
+        <img src="assets/photos/moment-2.jpg" alt="" />
+        <div><h3>Growing together</h3><p>Milestones, in-between days, and choosing each other again.</p></div>
+      </article>
+      <article class="event-card">
+        <img src="assets/photos/moment-3.jpg" alt="" />
+        <div><h3>To forever</h3><p>We cannot wait to celebrate with the people who walked with us here.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="inv-section wrap" id="gallery" style="padding-top:0">
+    <h2>Photo gallery</h2>
+    <p class="inv-sub">A scrolling marquee on the invitation — plus a dedicated gallery page in the live product.</p>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <img src="assets/photos/gallery-01.jpg" alt="" />
+        <img src="assets/photos/gallery-02.jpg" alt="" />
+        <img src="assets/photos/gallery-03.jpg" alt="" />
+        <img src="assets/photos/gallery-04.jpg" alt="" />
+        <img src="assets/photos/gallery-05.jpg" alt="" />
+        <img src="assets/photos/gallery-06.jpg" alt="" />
+        <img src="assets/photos/gallery-01.jpg" alt="" />
+        <img src="assets/photos/gallery-02.jpg" alt="" />
+        <img src="assets/photos/gallery-03.jpg" alt="" />
+        <img src="assets/photos/gallery-04.jpg" alt="" />
+        <img src="assets/photos/gallery-05.jpg" alt="" />
+        <img src="assets/photos/gallery-06.jpg" alt="" />
+      </div>
+    </div>
+  </section>
+
+  <section class="inv-section wrap" id="details" style="padding-top:2rem">
+    <h2>For our guests</h2>
+    <p class="inv-sub">The notes every couple answers a hundred times — already on the site.</p>
+    <div class="details-grid">
+      <article class="detail-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        <div><h4>Adults-only</h4><p>An adults-only celebration, except children named on the invitation or in the entourage.</p></div>
+      </article>
+      <article class="detail-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        <div><h4>During the ceremony</h4><p>Phones silent in the church. Photos are welcome for the rest of the day.</p></div>
+      </article>
+      <article class="detail-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M12 8V5"/></svg>
+        <div><h4>Gift guide</h4><p>Your presence is the gift. Monetary blessings are appreciated — details on the night.</p></div>
+      </article>
+      <article class="detail-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/></svg>
+        <div><h4>Dress code</h4><p>Follow the attire guide for guests, sponsors, and entourage. Skip denim, white, and neon.</p></div>
+      </article>
+      <article class="detail-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9L2 12v4c0 .6.4 1 1 1h2"/></svg>
+        <div><h4>Travel &amp; weather</h4><p>Allow extra time between venues. Bring a light layer if the reception is in the hills.</p></div>
+      </article>
+      <article class="detail-chip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg>
+        <div><h4>RSVP deadline</h4><p>Reply from your personal QR so we can lock seating and dinner counts.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="inv-section wrap" id="attire" style="padding-top:0">
+    <h2>Attire</h2>
+    <p class="inv-sub">Motif: <span data-copy="motif">Sage, champagne, and garden greens</span></p>
+    <div class="page-grid">
+      <article class="event-card">
+        <img src="assets/photos/attire-sponsors.jpg" alt="Sponsors" />
+        <div>
+          <h3>Principal sponsors</h3>
+          <p><strong>Ninong:</strong> Black suit</p>
+          <p><strong>Ninang:</strong> Long gown in the wedding motif</p>
+        </div>
+      </article>
+      <article class="event-card">
+        <img src="assets/photos/attire-guests.jpg" alt="Guests" />
+        <div>
+          <h3>Guests</h3>
+          <p><strong>Gentlemen:</strong> Semi-formal — blazer or button-down with tailored pants</p>
+          <p><strong>Ladies:</strong> Midi or maxi dress. Please avoid denim, shorts, slippers, and pure white.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="inv-section wrap" id="program" style="padding-top:0">
+    <h2>Program</h2>
+    <p class="inv-sub"><span data-copy="dateLong">Saturday, 20 June 2027</span> — ceremony, then celebration.</p>
+    <div class="program-timelines">
+      <article class="program-panel">
+        <h3>Ceremony</h3>
+        <ol class="program-list">
+          <li><time>1:30 PM</time><p>Guest arrival and seating. Phones silent.</p></li>
+          <li><time>2:00 PM</time><p>Processional and entrance of the bride.</p></li>
+          <li><time>2:15 PM</time><p>Nuptial mass, vows, and rings.</p></li>
+          <li><time>3:30 PM</time><p>Recessional and travel to the reception.</p></li>
+        </ol>
+      </article>
+      <article class="program-panel">
+        <h3>Reception</h3>
+        <ol class="program-list">
+          <li><time>4:30 PM</time><p>Welcome cocktails. Scan the venue QR.</p></li>
+          <li><time>5:00 PM</time><p>Reception proper — seats, menu, and dinner.</p></li>
+          <li><time>9:00 PM</time><p>After-party. Keep the POVs coming.</p></li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section class="inv-section wrap" id="entourage" style="padding-top:0">
+    <h2>The wedding party</h2>
+    <p class="inv-sub">An entourage photo book guests can turn on their phones.</p>
+    <div class="book-viewer">
+      <div class="book-frame">
+        <img src="assets/photos/entourage-01.jpg" alt="Entourage 1" />
+        <img src="assets/photos/entourage-02.jpg" alt="Entourage 2" style="display:none" />
+        <img src="assets/photos/entourage-03.jpg" alt="Entourage 3" style="display:none" />
+        <img src="assets/photos/entourage-04.jpg" alt="Entourage 4" style="display:none" />
+      </div>
+      <div class="book-controls">
+        <button type="button" id="book-prev" aria-label="Previous">‹</button>
+        <span id="book-page-label">Photo 1 of 4</span>
+        <button type="button" id="book-next" aria-label="Next">›</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="inv-section wrap faq" id="faq" style="padding-top:0">
+    <h2>FAQ</h2>
+    <p class="inv-sub">Copied from the live product — customized per couple.</p>
+    <details open>
+      <summary>How do I RSVP?</summary>
+      <p>Use the personal link or QR on your invitation. The public site stays locked until then.</p>
+    </details>
+    <details>
+      <summary>Can I bring a plus one?</summary>
+      <p>Only names printed on your invitation can be confirmed. Capacity is reserved in advance.</p>
+    </details>
+    <details>
+      <summary>Where do I sit?</summary>
+      <p>Seating is assigned. At the reception, scan the venue QR and search your name — no queue at registration.</p>
+    </details>
+    <details>
+      <summary>Can I take photos during the ceremony?</summary>
+      <p>Keep phones silent and stay seated. Photos are welcome after the ceremony and throughout the reception. Guest POVs upload to the live gallery on the night.</p>
+    </details>
+    <details>
+      <summary>Do you have a gift registry?</summary>
+      <p>No registry. Your presence is the gift; monetary blessings can be sent from the reception app.</p>
+    </details>
+  </section>
+
+  <section class="inv-section wrap" id="rsvp">
+    <h2>Respond with love</h2>
+    <p class="inv-sub">Invitation only. In this mockup, tap “I have my QR” to preview the guest flow.</p>
+    <div class="rsvp-box">
+      <div id="rsvp-locked">
+        <p class="eyebrow">Invitation only</p>
+        <h3 style="font-family:var(--font-display);font-size:1.6rem;margin:0.3rem 0 0.6rem">We would love to hear from you</h3>
+        <p style="color:var(--muted)">RSVP opens from the QR on your printed invite — never from a public link.</p>
+        <button class="btn btn-primary" type="button" id="unlock-rsvp" style="margin-top:1.1rem">I have my QR — preview RSVP</button>
+      </div>
+      <form id="rsvp-form" class="hidden">
+        <p class="eyebrow">Personal invitation</p>
+        <h3 style="font-family:var(--font-display);margin-bottom:0.4rem">Tick who will attend</h3>
+        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.6rem">After the first submit, this invitation may be updated only once.</p>
+        <div class="party">
+          <label><input type="checkbox" checked /> Ana Cruz</label>
+          <label><input type="checkbox" checked /> Miguel Santos</label>
+          <label><input type="checkbox" /> Lila Mendoza (declining)</label>
+        </div>
+        <textarea class="search" style="background:#fff;color:var(--ink);border-color:var(--line)" placeholder="Dietary notes"></textarea>
+        <button class="btn btn-primary" type="submit" style="margin-top:0.8rem;width:100%">Submit RSVP</button>
+      </form>
+      <div id="rsvp-done" class="hidden ok-card">
+        <h3 style="font-family:var(--font-display);font-size:1.6rem">You're all set</h3>
+        <p>Two guests confirmed. One update is allowed from this invitation; after that, message the couple.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+  <footer class="hub-foot wrap" style="text-align:center">
+    <p class="inv-footer-names" data-copy="names">Sofia &amp; Gabriel</p>
+    <p data-copy="dateLong">Saturday, 20 June 2027</p>
+    <p style="margin-top:0.6rem">Sample invitation for EverAfter by JMDigitals. Ambient audio plays on the live site.</p>
+  </footer>
+  <script src="assets/mockup.js"></script>
+</body>
+</html>

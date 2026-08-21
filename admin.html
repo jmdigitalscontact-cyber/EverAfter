@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.setAttribute("data-theme", new URLSearchParams(location.search).get("theme") || localStorage.getItem("ea-theme") || "sage");</script>
+  <title>Admin mockup — EverAfter</title>
+  <link rel="stylesheet" href="assets/mockup.css" />
+  <link rel="stylesheet" href="assets/themes.css" />
+</head>
+<body class="admin" data-page-title="Admin — {names}">
+  <header class="admin-top">
+    <a class="hub-brand" href="index.html">
+      <strong data-copy="names">Sofia &amp; Gabriel</strong>
+      <span>RSVP administration</span>
+    </a>
+    <div style="display:flex;gap:0.4rem;flex-wrap:wrap;align-items:center">
+      <a class="chip" href="index.html">Offering</a>
+      <a class="chip" href="designs.html">Looks</a>
+      <a class="chip" href="invitation.html">Invitation</a>
+      <a class="chip" href="reception.html">Reception</a>
+      <a class="chip" href="wall.html">Photo wall</a>
+      <div class="theme-switch">
+        <label for="theme-select">Look</label>
+        <select id="theme-select">
+          <option value="sage">Sage Garden</option>
+          <option value="blush">Champagne Blush</option>
+          <option value="navy">Midnight Velvet</option>
+          <option value="terra">Terracotta Olive</option>
+          <option value="ink">Ivory &amp; Ink</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <div class="admin-layout">
+    <nav class="admin-side" aria-label="Admin sections">
+      <button type="button" class="is-on" data-panel="dash">Dashboard</button>
+      <button type="button" data-panel="invites">Invitations</button>
+      <button type="button" data-panel="replies">Responses</button>
+      <button type="button" data-panel="export">Export</button>
+      <button type="button" data-panel="seats">Seating</button>
+      <button type="button" data-panel="photos">Photos</button>
+      <button type="button" data-panel="rec">Reception</button>
+    </nav>
+
+    <div class="admin-main">
+      <section class="panel is-on" id="dash">
+        <h2 style="font-family:var(--font-display);margin-bottom:0.8rem">Guest capacity</h2>
+        <div class="kpis">
+          <div class="kpi"><small>Limit</small><strong>180</strong></div>
+          <div class="kpi"><small>Confirmed</small><strong>116</strong></div>
+          <div class="kpi"><small>Remaining</small><strong>64</strong></div>
+          <div class="kpi"><small>Declined</small><strong>12</strong></div>
+        </div>
+        <div class="progress" aria-hidden="true"><span></span></div>
+        <div class="kpis">
+          <div class="kpi"><small>Invitations</small><strong>72</strong></div>
+          <div class="kpi"><small>Responded</small><strong>58</strong></div>
+          <div class="kpi"><small>Pending</small><strong>14</strong></div>
+          <div class="kpi"><small>Unused slots</small><strong>8</strong></div>
+        </div>
+        <div class="table-wrap" style="margin-top:1rem">
+          <table>
+            <thead><tr><th>Unused guest slots</th><th>Max</th><th>Confirmed</th><th>Open</th></tr></thead>
+            <tbody>
+              <tr><td>Work friends — design team</td><td>4</td><td>2</td><td>2</td></tr>
+              <tr><td>The Cruz family</td><td>3</td><td>2</td><td>1</td></tr>
+              <tr><td>College barkada</td><td>5</td><td>3</td><td>2</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="invites">
+        <h2 style="font-family:var(--font-display);margin-bottom:0.8rem">Invitations</h2>
+        <p style="color:var(--muted);margin-bottom:0.8rem">Create one household or import a CSV. Each row gets its own QR and personal link. Guests RSVP by scanning — password is only for the legacy login.</p>
+        <div class="admin-actions">
+          <button class="btn btn-primary" type="button" data-mock-action="Live admin: create invitation with guest names, max party size, and optional email.">Create invitation</button>
+          <button class="btn btn-ghost" type="button" data-mock-action="Live admin: bulk CSV import of households.">Import CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Household</th><th>Guests</th><th>QR</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>The Cruz family</td><td>3</td><td>Ready</td><td><span class="tag tag-yes">Sent</span></td></tr>
+              <tr><td>Reyes parents</td><td>2</td><td>Ready</td><td><span class="tag tag-yes">Sent</span></td></tr>
+              <tr><td>Work friends — design team</td><td>4</td><td>Ready</td><td><span class="tag tag-pending">Draft</span></td></tr>
+              <tr><td>Tita Rosa</td><td>1</td><td>Ready</td><td><span class="tag tag-yes">Sent</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="replies">
+        <h2 style="font-family:var(--font-display);margin-bottom:0.8rem">Responses</h2>
+        <p style="color:var(--muted);margin-bottom:0.8rem">Search by guest, invitation, or attendee. One guarded update per invitation after the first submit.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Name</th><th>Reply</th><th>Notes</th></tr></thead>
+            <tbody>
+              <tr><td>Ana Cruz, Miguel Santos</td><td><span class="tag tag-yes">Yes · 2</span></td><td>No pork</td></tr>
+              <tr><td>Lila Mendoza</td><td><span class="tag tag-no">Decline</span></td><td>—</td></tr>
+              <tr><td>Diego Reyes</td><td><span class="tag tag-pending">Pending</span></td><td>—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="export">
+        <h2 style="font-family:var(--font-display);margin-bottom:0.8rem">Export</h2>
+        <article class="card" style="margin-bottom:0.8rem">
+          <h3>Google Sheets</h3>
+          <p>Push invitations or responses to a shared sheet. Live product reads credentials from the server environment — never from the browser.</p>
+          <div class="admin-actions">
+            <button class="btn btn-primary" type="button" data-mock-action="Mockup only — live admin pushes invitations to Google Sheets.">Export invitations</button>
+            <button class="btn btn-ghost" type="button" data-mock-action="Mockup only — live admin pushes RSVP responses to Google Sheets.">Export responses</button>
+          </div>
+        </article>
+        <article class="card">
+          <h3>CSV download</h3>
+          <p>Flat files for backup or mail merge.</p>
+          <div class="admin-actions">
+            <button class="btn btn-ghost" type="button" data-mock-action="Would download invitations.csv">Invitations CSV</button>
+            <button class="btn btn-ghost" type="button" data-mock-action="Would download responses.csv">Responses CSV</button>
+            <button class="btn btn-ghost" type="button" data-mock-action="Would download full RSVP.csv">Full RSVP CSV</button>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel" id="seats">
+        <h2 style="font-family:var(--font-display);margin-bottom:0.8rem">Seating</h2>
+        <p style="color:var(--muted);margin-bottom:0.8rem">Capacity 180 · 10 seats per table · 18 tables needed. Guests only see their seat after they search their name on the night.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Guest</th><th>Table</th><th>Seat</th></tr></thead>
+            <tbody>
+              <tr><td data-copy="brideFull">Sofia Reyes</td><td>4 · sweetheart</td><td>1</td></tr>
+              <tr><td data-copy="groomFull">Gabriel Cruz</td><td>4 · sweetheart</td><td>2</td></tr>
+              <tr><td>Ana Cruz</td><td>7</td><td>3</td></tr>
+              <tr><td>Miguel Santos</td><td>7</td><td>4</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel" id="photos">
+        <h2 style="font-family:var(--font-display);margin-bottom:0.8rem">Guest POV gallery</h2>
+        <p style="color:var(--muted);margin-bottom:0.8rem">Hide, delete, or download a ZIP of every full-resolution upload. 64 photos in this sample.</p>
+        <div class="admin-actions">
+          <button class="btn btn-primary" type="button" data-mock-action="Live admin streams a ZIP of every guest photo.">Export all (.zip)</button>
+          <button class="btn btn-ghost" type="button" data-mock-action="Refresh the photo grid.">Refresh</button>
+        </div>
+        <div class="photo-grid">
+          <img src="assets/photos/pov-01.jpg" alt="" />
+          <img src="assets/photos/pov-02.jpg" alt="" />
+          <img src="assets/photos/pov-03.jpg" alt="" />
+          <img src="assets/photos/pov-04.jpg" alt="" />
+        </div>
+      </section>
+
+      <section class="panel" id="rec">
+        <h2 style="font-family:var(--font-display);margin-bottom:0.8rem">Reception night</h2>
+        <p style="color:var(--muted)">Print the venue QR. Watch Team Bride vs Team Groom live. Read private guest notes. Reset votes after rehearsal.</p>
+        <div class="vote-row">
+          <div class="vote-pill bride"><small>Team Bride</small><strong style="display:block;font-size:2rem">48</strong></div>
+          <div class="vote-pill groom"><small>Team Groom</small><strong style="display:block;font-size:2rem">41</strong></div>
+        </div>
+        <div class="admin-actions">
+          <button class="btn btn-ghost" type="button" data-mock-action="Votes refresh from the live tally.">Refresh votes</button>
+          <button class="btn btn-ghost" type="button" data-mock-action="Live admin can reset votes after rehearsal so the same phones can vote again.">Reset votes for testing</button>
+        </div>
+        <h3 style="font-family:var(--font-serif);margin:1.2rem 0 0.5rem">Messages for the couple</h3>
+        <p style="color:var(--muted);font-size:0.88rem;margin-bottom:0.6rem">Private notes from the reception app. Export CSV or clear after the wedding.</p>
+        <div class="msg-card"><strong>Tita Rosa</strong><p>So proud of you both. Save us a dance.</p><small>8:14 PM</small></div>
+        <div class="msg-card"><strong>Miguel Santos</strong><p>Thank you for including us. The ceremony was beautiful.</p><small>8:32 PM</small></div>
+        <div class="admin-actions">
+          <button class="btn btn-ghost" type="button" data-mock-action="Would download reception-messages.csv">Export messages CSV</button>
+        </div>
+        <h3 style="font-family:var(--font-serif);margin:1.2rem 0 0.5rem">Venue access QR</h3>
+        <p style="color:var(--muted);font-size:0.88rem">Embeds the reception key. Anyone who scans it unlocks seating, menu, gallery, notes, and gifts.</p>
+        <div class="qr-placeholder" aria-hidden="true"></div>
+        <button class="btn btn-primary" type="button" data-mock-action="Live admin generates and downloads a print-ready reception QR.">Generate reception QR</button>
+      </section>
+    </div>
+  </div>
+  <script src="assets/mockup.js"></script>
+</body>
+</html>

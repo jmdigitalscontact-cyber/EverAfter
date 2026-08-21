@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.setAttribute("data-theme", new URLSearchParams(location.search).get("theme") || localStorage.getItem("ea-theme") || "sage");</script>
+  <title>Photo wall mockup — EverAfter</title>
+  <link rel="stylesheet" href="assets/mockup.css" />
+  <link rel="stylesheet" href="assets/themes.css" />
+</head>
+<body class="wall" data-page-title="Photo wall — {names}">
+  <header class="hub-bar">
+    <a class="hub-brand" href="index.html">
+      <strong>EverAfter</strong>
+      <span>Photo wall</span>
+    </a>
+    <nav class="hub-nav">
+      <a href="index.html">Offering</a>
+      <a href="designs.html">Looks</a>
+      <a href="invitation.html">Invitation</a>
+      <a href="admin.html">Admin</a>
+      <a href="reception.html">Reception</a>
+      <a class="is-active" href="wall.html">Photo wall</a>
+    </nav>
+    <div class="theme-switch">
+      <label for="theme-select">Look</label>
+      <select id="theme-select">
+        <option value="sage">Sage Garden</option>
+        <option value="blush">Champagne Blush</option>
+        <option value="navy">Midnight Velvet</option>
+        <option value="terra">Terracotta Olive</option>
+        <option value="ink">Ivory &amp; Ink</option>
+      </select>
+    </div>
+  </header>
+
+  <div class="wall-head">
+    <div>
+      <h1 data-copy="names">Sofia &amp; Gabriel</h1>
+      <p class="wall-subtitle" style="letter-spacing:0.12em;text-transform:uppercase;font-size:0.82rem;opacity:0.75">Live guest POV wall</p>
+    </div>
+    <p style="opacity:0.7;font-size:0.9rem">Scan the venue QR to add yours</p>
+  </div>
+  <div class="wall-stage">
+    <img id="wall-photo" src="assets/photos/pov-02.jpg" alt="Guest photo on the wall" />
+  </div>
+  <p class="wall-cap">Slideshow of guest uploads · Live product polls for new photos every few seconds</p>
+  <script src="assets/mockup.js"></script>
+</body>
+</html>

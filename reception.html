@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>document.documentElement.setAttribute("data-theme", new URLSearchParams(location.search).get("theme") || localStorage.getItem("ea-theme") || "sage");</script>
+  <title>Reception mockup — EverAfter</title>
+  <link rel="stylesheet" href="assets/mockup.css" />
+  <link rel="stylesheet" href="assets/themes.css" />
+</head>
+<body data-page-title="Reception — {names}">
+  <header class="hub-bar">
+    <a class="hub-brand" href="index.html">
+      <strong>EverAfter</strong>
+      <span>Reception mockup</span>
+    </a>
+    <nav class="hub-nav">
+      <a href="index.html">Offering</a>
+      <a href="designs.html">Looks</a>
+      <a href="invitation.html">Invitation</a>
+      <a href="admin.html">Admin</a>
+      <a class="is-active" href="reception.html">Reception</a>
+      <a href="wall.html">Photo wall</a>
+    </nav>
+    <div class="theme-switch">
+      <label for="theme-select">Look</label>
+      <select id="theme-select">
+        <option value="sage">Sage Garden</option>
+        <option value="blush">Champagne Blush</option>
+        <option value="navy">Midnight Velvet</option>
+        <option value="terra">Terracotta Olive</option>
+        <option value="ink">Ivory &amp; Ink</option>
+      </select>
+    </div>
+  </header>
+
+  <div class="phone-page">
+    <div class="phone" aria-label="Reception app preview">
+      <div class="phone-notch"><span></span></div>
+
+      <div class="rec-overlay is-on" id="rec-lock">
+        <div class="rec-lock-card">
+          <p class="rec-gem" aria-hidden="true">💍</p>
+          <h2 style="font-family:var(--font-display);font-size:1.55rem;margin:0.6rem 0">Welcome to the celebration</h2>
+          <p style="color:var(--rec-muted);line-height:1.6">Scan the venue QR from your table card or the door. The public wedding site never links here.</p>
+          <button class="btn btn-primary" type="button" id="rec-unlock" style="width:100%;margin-top:1.4rem">I have the venue QR</button>
+          <p style="margin-top:1rem;font-size:0.78rem;color:var(--rec-muted)">Live app: key is inside the QR. Wrong key stays locked.</p>
+        </div>
+      </div>
+
+      <div class="rec-overlay" id="rec-welcome">
+        <div class="rec-welcome-card">
+          <p class="rec-gem" aria-hidden="true">💍</p>
+          <p class="eyebrow" style="color:var(--gold)" data-copy="names">Sofia &amp; Gabriel</p>
+          <h2 style="font-family:var(--font-display);font-size:1.6rem;margin:0.4rem 0 0.8rem">Welcome to our wedding reception</h2>
+          <div class="ornament" aria-hidden="true"><span></span><i></i><span></span></div>
+          <p style="color:var(--rec-muted);line-height:1.65">We're so happy you're here. Continue to pick a team — then we'll help you find your seat.</p>
+          <button class="btn btn-primary" type="button" id="rec-welcome-cta" style="width:100%;margin-top:1.6rem">Continue</button>
+        </div>
+      </div>
+
+      <div class="rec-overlay" id="rec-vote">
+        <div class="rec-head">
+          <p>Pick a side</p>
+          <h1>Team Bride or Team Groom?</h1>
+        </div>
+        <p style="color:var(--rec-muted);font-size:0.9rem;margin-bottom:1rem">One vote per phone. Your first vote is final on this device.</p>
+        <div class="choice">
+          <button type="button" class="bride" data-team="bride">
+            <strong>Team Bride</strong>
+            <span data-copy="bride">Sofia</span>
+          </button>
+          <button type="button" class="groom" data-team="groom">
+            <strong>Team Groom</strong>
+            <span data-copy="groom">Gabriel</span>
+          </button>
+        </div>
+        <p id="vote-status" style="margin:0.9rem 0 0;color:#e8ca7a;font-size:0.88rem"></p>
+        <div id="vote-results" class="hidden">
+          <div class="bar" aria-hidden="true"><i class="b"></i><i class="g"></i></div>
+          <p style="display:flex;justify-content:space-between;font-size:0.88rem"><span>Bride 48</span><span>Groom 41</span></p>
+          <button class="btn btn-primary" type="button" id="rec-find-seat" style="width:100%;margin-top:1.1rem">Find my seat</button>
+        </div>
+      </div>
+
+      <section class="rec-screen" id="rec-search">
+        <div class="rec-head">
+          <p data-copy="names">Sofia &amp; Gabriel</p>
+          <h1>Find your seat</h1>
+        </div>
+        <p style="color:var(--rec-muted);font-size:0.88rem">Your table is shown only after you search your name.</p>
+        <input class="search" id="guest-search" type="search" placeholder="Type your name" autocomplete="off" />
+        <div id="search-out"></div>
+      </section>
+
+      <section class="rec-screen" id="rec-floor">
+        <div class="rec-head"><p>Reception</p><h1>Floor plan</h1></div>
+        <p style="color:var(--rec-muted);font-size:0.88rem">Pinch to zoom. Drag to pan. Tap a table for the guest list.</p>
+        <div class="floor-mock">
+          <span style="position:absolute;left:18%;top:22%;width:44px;height:44px;border-radius:50%;background:var(--sage);display:grid;place-items:center;font-size:0.8rem">4</span>
+          <span style="position:absolute;left:58%;top:40%;width:44px;height:44px;border-radius:50%;background:var(--sage);display:grid;place-items:center;font-size:0.8rem">7</span>
+          <span style="position:absolute;left:38%;top:62%;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;font-size:0.7rem">You</span>
+          <span style="position:absolute;left:8%;bottom:12%;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--rec-muted)">Entrance</span>
+          <span style="position:absolute;right:10%;top:10%;font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--rec-muted)">Stage</span>
+        </div>
+      </section>
+
+      <section class="rec-screen" id="rec-menu">
+        <div class="rec-head"><p>Reception</p><h1>Tonight's menu</h1></div>
+        <div class="menu-filters">
+          <button type="button" class="is-on" data-filter="all">All</button>
+          <button type="button" data-filter="gf">GF</button>
+          <button type="button" data-filter="v">V</button>
+        </div>
+        <div class="menu-item" data-tag="v gf"><strong>Garden greens</strong><br /><small>Champagne vinaigrette · V · GF</small></div>
+        <div class="menu-item" data-tag="gf"><strong>Herb-crusted beef</strong><br /><small>Truffle potato · GF</small></div>
+        <div class="menu-item" data-tag="gf"><strong>Pan-seared salmon</strong><br /><small>Citrus beurre blanc · GF</small></div>
+        <div class="menu-item" data-tag="v"><strong>Wild mushroom risotto</strong><br /><small>Parmesan crisp · V</small></div>
+        <div class="menu-item" data-tag="gf"><strong>Vanilla bean panna cotta</strong><br /><small>Passionfruit · GF</small></div>
+      </section>
+
+      <section class="rec-screen" id="rec-photos">
+        <div class="rec-head"><p>Reception</p><h1>Live gallery</h1></div>
+        <p style="color:var(--rec-muted);font-size:0.88rem">Photos compress on the phone to WebP before they upload. Name and table are optional.</p>
+        <div class="rec-upload">
+          <p style="font-size:0.85rem;color:var(--rec-muted)">Drop photos here or tap to upload</p>
+          <div class="row">
+            <input class="search" type="text" placeholder="Your name" style="margin:0" />
+            <input class="search" type="number" placeholder="Table #" style="margin:0" />
+          </div>
+          <div class="row">
+            <button class="btn btn-primary" type="button" id="photo-snap">Snap your POV</button>
+            <button class="btn btn-ghost" type="button" id="photo-gallery-btn" style="color:#f0ece4;border-color:rgba(255,255,255,0.2)">From gallery</button>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;color:var(--gold);margin:0.4rem 0 0.6rem">✨ Real-time POV feed</p>
+        <div class="pov">
+          <img src="assets/photos/pov-01.jpg" alt="" />
+          <img src="assets/photos/pov-02.jpg" alt="" />
+          <img src="assets/photos/pov-03.jpg" alt="" />
+          <img src="assets/photos/pov-04.jpg" alt="" />
+        </div>
+      </section>
+
+      <section class="rec-screen" id="rec-notes">
+        <div class="rec-head"><p>Reception</p><h1>Message for the couple</h1></div>
+        <p style="color:var(--rec-muted);font-size:0.88rem">Leave a private note. Only the couple and admin can read it — guests cannot browse other messages.</p>
+        <form class="rec-note" id="couple-message-form">
+          <input class="search" type="text" required placeholder="Your name" maxlength="128" />
+          <textarea required maxlength="1000" placeholder="Write your wishes for the newlyweds…"></textarea>
+          <button class="btn btn-primary" type="submit" style="width:100%">Send to the couple</button>
+        </form>
+        <div id="couple-message-done" class="hidden" style="margin-top:1rem;color:#e8ca7a">
+          <strong>Sent.</strong> Thank you — they will read this after the night.
+        </div>
+      </section>
+
+      <section class="rec-screen" id="rec-gifts">
+        <div class="rec-head"><p>Reception</p><h1>Wedding gifts</h1></div>
+        <div class="gift">
+          <div class="gift-box" id="gift-box" role="button" tabindex="0" aria-label="Open gift box"></div>
+          <p id="gift-cta">Tap the box</p>
+          <div id="gift-details" class="hidden" style="margin-top:1rem;text-align:left;background:var(--rec-surface);padding:1rem;border-radius:14px">
+            <p><strong data-copy="bank">BDO · Sofia Reyes · 00••••••1234</strong></p>
+            <p style="margin-top:0.5rem" data-copy="wallet">GCash · 09•• ••• 4567</p>
+            <p style="margin-top:0.7rem;color:var(--rec-muted);font-size:0.85rem">QR codes for e-wallets appear here in the live app.</p>
+          </div>
+        </div>
+      </section>
+
+      <nav class="rec-tabs" aria-label="Reception sections">
+        <button type="button" data-screen="rec-search">Search</button>
+        <button type="button" data-screen="rec-floor">Floor</button>
+        <button type="button" data-screen="rec-menu">Menu</button>
+        <button type="button" data-screen="rec-photos">Photos</button>
+        <button type="button" data-screen="rec-notes">Notes</button>
+        <button type="button" data-screen="rec-gifts">Gifts</button>
+      </nav>
+    </div>
+  </div>
+  <script src="assets/mockup.js"></script>
+</body>
+</html>
